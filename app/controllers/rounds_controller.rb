@@ -15,10 +15,12 @@ class RoundsController < ApplicationController
   # GET /rounds/new
   def new
     @round = Round.new
+    @games = Game.all
   end
 
   # GET /rounds/1/edit
   def edit
+    @games = Game.all
   end
 
   # POST /rounds
@@ -69,6 +71,6 @@ class RoundsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def round_params
-      params.require(:round).permit(:number, :games_id)
+      params.require(:round).permit(:number, :game_id)
     end
 end

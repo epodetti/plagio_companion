@@ -1,13 +1,13 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Number:</strong>
+  <strong>Numero del round:</strong>
   <%= @round.number %>
 </p>
 
 <p>
-  <strong>Games:</strong>
-  <%= @round.games %>
+  <strong>Partita:</strong>
+  <%= @round.game.title %>
 </p>
 
 <%= link_to 'Edit', edit_round_path(@round) %> |

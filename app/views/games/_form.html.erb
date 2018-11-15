@@ -12,7 +12,12 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :date %>
+    <%= form.label :title, 'Titolo' %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :date, 'Data' %>
     <%= form.datetime_select :date %>
   </div>
 

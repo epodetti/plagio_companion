@@ -61,6 +61,12 @@ class CitationsController < ApplicationController
     end
   end
 
+  def per_round
+    @current_game = 1
+    @current_round = 1
+    @citations = Citation.where(round: @current_round)
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_citation

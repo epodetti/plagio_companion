@@ -5,4 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :games
   has_many :citations
+  has_many :rounds, through: :citations
 end
