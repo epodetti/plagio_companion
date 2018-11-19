@@ -1,1 +1,0 @@
-# plagio_companion
