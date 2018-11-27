@@ -15,6 +15,10 @@ class CitationsController < ApplicationController
   # GET /citations/new
   def new
     @citation = Citation.new
+    @current_game = Game.last
+    @current_round = Round.where(game_id: @current_game).last
+    @citation.user_id = current_user
+    @citation.round_id = @current_round
   end
 
   # GET /citations/1/edit
@@ -62,8 +66,8 @@ class CitationsController < ApplicationController
   end
 
   def per_round
-    @current_game = 1
-    @current_round = 1
+    @current_game = Game.last
+    @current_round = Round.where(game_id: @current_game).last
     @citations = Citation.where(round: @current_round)
   end
 
@@ -75,6 +79,7 @@ class CitationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def citation_params
-      params.fetch(:citation, {})
+      #params.fetch(:citation, {})
+      params.require(:citation).permit(:body, :user_id, :round_id)
     end
 end

@@ -1,6 +1,7 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Citazioni del round @current_round della partita @current_game</h1>
+<h1>Citazioni del round con narratore <%= @current_round.narrator %> della partita <%= @current_game.title %></h1>
+<%= @current_round.citation_start %>
 
 <table>
   <thead>
@@ -21,5 +22,3 @@
 </table>
 
 <br>
-
-<%= link_to 'Nuova Citazione', new_citation_path %>

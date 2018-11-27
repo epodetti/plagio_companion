@@ -12,13 +12,11 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :game_title, 'form.round.game.title' %>
-    <%= form.number_field :game_title %>
+    <%= form.label :game_title, 'Partita: ' + @current_game.title %>
   </div>
 
   <div class="field">
-    <%= form.label :round_number, 'form.round.number' %>
-    <%= form.number_field :round_number %>
+    <%= form.label :round_narrator, 'Narratore: ' + @current_round.narrator %>
   </div>
 
   <div class="field">

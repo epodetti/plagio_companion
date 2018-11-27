@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_15_140852) do
+ActiveRecord::Schema.define(version: 2018_11_27_144311) do
 
   create_table "citations", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -34,6 +34,8 @@ ActiveRecord::Schema.define(version: 2018_11_15_140852) do
     t.integer "game_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "narrator"
+    t.text "citation_start"
     t.index ["game_id"], name: "index_rounds_on_game_id"
   end
 
